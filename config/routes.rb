@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'recipes#index'
   resources :users
   resources :recipes
   resources :sessions, only: [:new, :create, :destroy]

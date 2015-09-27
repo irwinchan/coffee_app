@@ -1,8 +1,7 @@
 class RecipesController < ApplicationController
 
-
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order(created_at: :desc)
   end
 
   def show
@@ -15,7 +14,8 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    user = User.find(current_user.id)
+    @recipe = user.recipes.new(recipe_params)
     if @recipe.save
       redirect_to :recipes
     else

@@ -1,6 +1,8 @@
 <%= form_for [@user, @recipe] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
   <%= f.label :water_vol %>
   <%= f.text_field :coffee_amount %>
   <%= f.label :coffee_amount %>

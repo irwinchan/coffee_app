@@ -1,5 +1,6 @@
 <h1>Coffee Recipes</h1>
 
+<h2><%= link_to "Add recipe", new_recipe_path %></h3>
 <% @recipes.each do |recipe| %>
   <div class="coffee_recipe">
     <h3><%= link_to recipe.title, recipe_path(recipe) %></h2>
