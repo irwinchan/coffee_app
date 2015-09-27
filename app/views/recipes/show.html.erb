@@ -1,0 +1,13 @@
+<h2><%= @recipe.title %></h2>
+<div class="coffee_recipe">
+  <p><%= @recipe.description %>
+  <ul>
+    <li>Water temperature: <%= @recipe.water_temp %></li>
+    <li>Water volume: <%= @recipe.water_vol %></li>
+    <li>Coffee amount: <%= @recipe.coffee_amount %></li>
+  </ul>
+  <div class="recipe_technique">
+    Recipe technique:
+    <p><%= @recipe.technique %></p>
+  </div>
+</div>

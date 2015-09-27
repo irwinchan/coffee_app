@@ -7,9 +7,24 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-50.times do
-  User.create!(
-    name: Faker::Name.name,
-    email: Faker::Internet.email
+# 50.times do
+#   User.create!(
+#     name: Faker::Name.name,
+#     email: Faker::Internet.email
+#   )
+# end
+
+
+
+100.times do
+  Recipe.create!(
+    user_id: (1..50).to_a.sample,
+    technique: Faker::Lorem.paragraph,
+    water_vol: (100..400).to_a.sample,
+    water_temp: (70..100).to_a.sample,
+    title: Faker::Lorem.sentence.titleize,
+    coffee_amount: (5..15).to_a.sample,
+    description: Faker::Lorem.sentence(3,true)
   )
 end
+

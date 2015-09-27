@@ -1,0 +1,13 @@
+<%= form_for [@user, @recipe] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :water_vol %>
+  <%= f.text_field :coffee_amount %>
+  <%= f.label :coffee_amount %>
+  <%= f.text_field :water_vol %>
+  <%= f.label :water_temp %>
+  <%= f.text_field :water_temp %>
+  <%= f.label :technique %>
+  <%= f.text_area :technique %>
+  <%= f.submit %>
+<% end %>
