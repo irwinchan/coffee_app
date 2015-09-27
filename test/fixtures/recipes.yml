@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coffee_id: 1
+  grinder_id: 1
+  coffee_maker_id: 1
+  technique: MyText
+  water_vol: 1.5
+  water_temp: 1.5
+
+two:
+  coffee_id: 1
+  grinder_id: 1
+  coffee_maker_id: 1
+  technique: MyText
+  water_vol: 1.5
+  water_temp: 1.5
