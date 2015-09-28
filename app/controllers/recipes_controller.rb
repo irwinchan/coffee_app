@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @user = User.find(@recipe.user_id)
   end
 
 
@@ -34,7 +35,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:user_id, :water_vol, :water_temp, :title, :technique)
+    params.require(:recipe).permit(:user_id, :water_vol, :water_temp, :title, :technique, :description)
   end
 
 end

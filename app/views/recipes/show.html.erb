@@ -1,13 +1,21 @@
-<h2><%= @recipe.title %></h2>
-<div class="coffee_recipe">
-  <p><%= @recipe.description %>
-  <ul>
-    <li>Water temperature: <%= @recipe.water_temp %></li>
-    <li>Water volume: <%= @recipe.water_vol %></li>
-    <li>Coffee amount: <%= @recipe.coffee_amount %></li>
-  </ul>
-  <div class="recipe_technique">
-    Recipe technique:
-    <p><%= @recipe.technique %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2><%= @recipe.title %></h2>
   </div>
+    <div class="coffee_recipe panel-body">
+      <div class="user-info">
+        Created by <%= link_to @user.name, user_path(@user) %>
+      </div>
+      <p><%= @recipe.description %></p>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Water temperature:</strong> <%= @recipe.water_temp %> &#8451</li>
+        <li class="list-group-item"><strong>Water volume:</strong> <%= @recipe.water_vol %> ml</li>
+        <li class="list-group-item"><strong>Coffee amount:</strong> <%= @recipe.coffee_amount %> g</li>
+      </ul>
+      <div class="recipe-technique">
+        <h4>Recipe Technique</h4>
+        <p><%= @recipe.technique %></p>
+      </div>
+    </div>
+
 </div>

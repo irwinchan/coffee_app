@@ -1,9 +1,12 @@
-<h1>Coffee Recipes</h1>
 
-<h2><%= link_to "Add recipe", new_recipe_path %></h3>
+<div class="jumbotron">
+  <h1>The art of coffee brewing</h1>
+</div>
+
+<button class="btn btn-default"><%= link_to "Add recipe", new_recipe_path %></button>
 <% @recipes.each do |recipe| %>
-  <div class="coffee_recipe">
-    <h3><%= link_to recipe.title, recipe_path(recipe) %></h2>
-    <p class="description"><%= recipe.description %><p>
+  <div class="coffee_recipe list-group-item">
+    <h3 class="list-group-heading"><%= link_to recipe.title, recipe_path(recipe) %></h3>
+    <p class="description list-group-item-text"><%= recipe.description %><p>
   </div>
 <% end %>
