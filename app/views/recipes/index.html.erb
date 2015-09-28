@@ -5,11 +5,13 @@
 </div>
 
 <div class="form-container">
-  <button class="btn btn-default"><%= link_to "Add recipe", new_recipe_path %></button>
+  <button class="btn btn-default" id="add-recipe"><%= link_to "Add recipe", new_recipe_path %></button>
 
   <%= form_for [@user, @recipe] do |f| %>
-    <div class="form-horizontal">
-
+    <div class="form-horizontal col-sm-12" id="new-recipe-form">
+    <button class="btn btn-default pull-right" id="close-new-recipe-form">
+      <span class="glyphicon glyphicon-remove"></span>
+    </button>
     <div class="form-group">
       <%= f.label :title, class: "col-sm-2 control-label"%>
       <div class="col-sm-6">
