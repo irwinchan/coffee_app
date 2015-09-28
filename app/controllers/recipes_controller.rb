@@ -2,7 +2,9 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all.order(created_at: :desc)
-    @recipe = current_user.recipes.build
+    if current_user
+      @recipe = current_user.recipes.build
+    end
   end
 
   def show

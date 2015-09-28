@@ -15,12 +15,16 @@
     </div>
     <div class="user-menu navbar-right">
       <% if current_user %>
-        <%= link_to current_user.name, user_path(current_user) %>
+        <button type="button" class="btn btn-default">
+          <%= link_to current_user.name, user_path(current_user) %>
+          <span class="glyphicon glyphicon-user"></span>
+        </button>
         <button type="button" class="btn btn-default navbar-btn">
           <%= link_to "Log out", session_path("current"), :method => :delete %>
         </button>
       <% else %>
         <button type="button" class="btn btn-default navbar-btn"><%= link_to "Login", new_session_path %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign up", new_user_path %></button>
       <% end %>
     </div>
   </div>

@@ -7,14 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# 50.times do
-#   User.create!(
-#     name: Faker::Name.name,
-#     email: Faker::Internet.email
-#   )
-# end
-
-
+50.times do
+  User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email
+  )
+end
 
 100.times do
   Recipe.create!(

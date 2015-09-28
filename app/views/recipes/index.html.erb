@@ -1,10 +1,12 @@
 
-<div class="jumbotron">
+<div class="jumbotron recipes-header">
   <h1>Brewing Coffee</h1>
   <p>Share your brewing techniques</p>
 </div>
 
+<% if current_user %>
 <div class="form-container">
+
   <button class="btn btn-default" id="add-recipe"><%= link_to "Add recipe", new_recipe_path %></button>
 
   <%= form_for [@user, @recipe] do |f| %>
@@ -59,6 +61,7 @@
   </div>
   <% end %>
 </div>
+<% end %>
 
 <% @recipes.each do |recipe| %>
   <div class="coffee_recipe list-group-item">

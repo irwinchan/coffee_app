@@ -10,7 +10,7 @@ $(document).on('ready page:load', function(){
   $("#close-new-recipe-form").on('click', function(event){
     event.preventDefault();
     $("#new-recipe-form").animate({
-      left: -1080
+      left: -3000
     }, 400);
   })
 });
