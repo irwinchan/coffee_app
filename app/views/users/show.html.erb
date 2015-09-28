@@ -4,9 +4,9 @@
 
 <h3>Recipes</h3>
 <div class="user-recipes">
-  <ul>
+  <ul class="list-group">
   <% @recipes.each do |recipe| %>
-    <li><%= link_to recipe.title, recipe_path(recipe) %></li>
+    <li class="list-group-item"><%= link_to recipe.title, recipe_path(recipe) %></li>
   <% end %>
   </ul>
 </div>
