@@ -1,7 +1,13 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.all.order(created_at: :desc)
+    search = params[:search]
+    if search
+      @recipes = Recipe.where('description LIKE ? OR title LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%").order(created_at: :desc)
+    else
+      @recipes = Recipe.all.order(created_at: :desc)
+    end
+
     if current_user
       @recipe = current_user.recipes.build
     end

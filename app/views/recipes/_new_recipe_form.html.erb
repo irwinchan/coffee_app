@@ -1,0 +1,56 @@
+<div class="form-container">
+
+  <button class="btn btn-default" id="add-recipe"><%= link_to "Add recipe", new_recipe_path %></button>
+
+  <%= form_for [@user, @recipe] do |f| %>
+    <div class="form-horizontal col-sm-12" id="new-recipe-form">
+    <button class="btn btn-default pull-right" id="close-new-recipe-form">
+      <span class="glyphicon glyphicon-remove"></span>
+    </button>
+    <div class="form-group">
+      <%= f.label :title, class: "col-sm-2 control-label"%>
+      <div class="col-sm-6">
+        <%= f.text_field :title, class: "form-control"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :water_vol, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :water_vol, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :coffee_amount, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :coffee_amount, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :water_temp, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :water_temp, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :technique, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_area :technique, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-6 col-sm-offset-2"><%= f.submit %></div>
+    </div>
+  </div>
+  <% end %>
+</div>
