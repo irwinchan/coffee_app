@@ -1,0 +1,5 @@
+<h1>Edit</h1>
+
+<%= render partial: 'coffee_form', locals: {coffee: @coffee} %>
+  <%= link_to "Cancel", :back, class: "btn btn-default form-cancel-button" %>
+<%= link_to "delete", coffee_bean_path(@coffee), method: :delete, class: "btn btn-default form-cancel-button", data: { confirm: "Delete this item?" } %>
