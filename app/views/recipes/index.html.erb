@@ -12,7 +12,15 @@
 </div>
 
 <% if current_user %>
-  <%= render 'recipes/new_recipe_form' %>
+  <div class="form-container">
+    <button class="btn btn-default" id="add-recipe"><%= link_to "Add recipe", new_recipe_path %></button>
+    <div id="hide-form" class="col-sm-12">
+      <button class="btn btn-default pull-right" id="close-new-recipe-form">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+      <%= render 'recipe_form' %>
+    </div>
+  </div>
 <% end %>
 
 <% @recipes.each do |recipe| %>

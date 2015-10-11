@@ -1,12 +1,4 @@
-<div class="form-container">
-
-  <button class="btn btn-default" id="add-recipe"><%= link_to "Add recipe", new_recipe_path %></button>
-
-  <%= form_for [@user, @recipe] do |f| %>
-    <div class="form-horizontal col-sm-12" id="new-recipe-form">
-    <button class="btn btn-default pull-right" id="close-new-recipe-form">
-      <span class="glyphicon glyphicon-remove"></span>
-    </button>
+<%= form_for [@user, @recipe], html: {class: "form-horizontal"} do |f| %>
     <div class="form-group">
       <%= f.label :title, class: "col-sm-2 control-label"%>
       <div class="col-sm-6">
@@ -51,6 +43,4 @@
     <div class="form-group">
       <div class="col-sm-6 col-sm-offset-2"><%= f.submit %></div>
     </div>
-  </div>
-  <% end %>
-</div>
+<% end %>

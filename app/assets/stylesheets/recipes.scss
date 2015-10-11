@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .recipes-header {
-  background: url("http://www.brownscoffee.com/wp-content/uploads/2015/03/coffeegrinder.jpg") no-repeat center;
+  background: url("http://i.imgur.com/CcTP1.jpg") no-repeat center;
   background-size: cover;
   color: #BF8A55 !important;
 }
@@ -12,18 +12,23 @@
   position: relative;
 }
 
-#new-recipe-form {
-  position: absolute !important;
-  border-radius: 5px;
-  overflow: hidden;
+#hide-form {
   z-index: 9999;
-  background: white;
+  position: absolute !important;
   top: 0;
-  border: 1px solid #ccc;
   left: -3000px;
-  padding: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-top: 1em;
+  background-color: white;
   -webkit-box-shadow: -7px 8px 15px -7px rgba(0,0,0,0.75);
   -moz-box-shadow: -7px 8px 15px -7px rgba(0,0,0,0.75);
   box-shadow: -7px 8px 15px -7px rgba(0,0,0,0.75);
+}
+
+#new-recipe {
+  background: white;
+  padding: 10px;
 }
 

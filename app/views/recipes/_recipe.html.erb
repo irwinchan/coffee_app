@@ -5,6 +5,7 @@
     <div class="coffee_recipe panel-body">
       <div class="user-info">
         Created by <%= link_to @user.name, user_path(@user) %>
+        <%= link_to 'edit', edit_recipe_path(@recipe) %>
       </div>
       <p><%= @recipe.description %></p>
       <ul class="list-group">

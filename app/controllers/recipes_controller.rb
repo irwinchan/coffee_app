@@ -18,7 +18,6 @@ class RecipesController < ApplicationController
     @user = User.find(@recipe.user_id)
   end
 
-
   def new
     @recipe = Recipe.new
   end
@@ -34,6 +33,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = current_user.recipes.find(params[:id])
   end
 
   def update

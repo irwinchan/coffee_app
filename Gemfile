@@ -50,5 +50,8 @@ group :development do
 
   # Faker generates fake seed data
   gem 'faker'
+
+  # This is a small gem which causes rails console to open pry. It therefore depends on pry.
+  gem 'pry-rails'
 end
 
