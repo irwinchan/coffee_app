@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151009033915) do
+ActiveRecord::Schema.define(version: 20151011033812) do
 
   create_table "coffee_beans", force: :cascade do |t|
     t.string   "brand"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20151009033915) do
     t.string   "origin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "coffee_beans", ["user_id"], name: "index_coffee_beans_on_user_id"
 
   create_table "recipes", force: :cascade do |t|
     t.integer  "coffee_id"
@@ -35,8 +38,10 @@ ActiveRecord::Schema.define(version: 20151009033915) do
     t.string   "title"
     t.integer  "coffee_amount"
     t.text     "description"
+    t.integer  "coffee_bean_id"
   end
 
+  add_index "recipes", ["coffee_bean_id"], name: "index_recipes_on_coffee_bean_id"
   add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
 
   create_table "users", force: :cascade do |t|

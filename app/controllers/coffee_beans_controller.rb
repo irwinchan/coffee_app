@@ -6,7 +6,7 @@ class CoffeeBeansController < ApplicationController
   def create
     @coffee = CoffeeBean.new(coffee_params)
     if @coffee.save
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -18,7 +18,7 @@ class CoffeeBeansController < ApplicationController
 
   def update
     @coffee = CoffeeBean.find(params[:id])
-    @coffee = @coffee.update_attributes(coffee_params)
+    @coffee.update_attributes(coffee_params)
     redirect_to coffee_bean_path(@coffee)
   end
 

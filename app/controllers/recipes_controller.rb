@@ -37,9 +37,14 @@ class RecipesController < ApplicationController
   end
 
   def update
+    @recipe = current_user.recipes.find(params[:id])
+    @recipe.update_attributes(recipe_params)
   end
 
   def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to user_path(current_user)
   end
 
   private
