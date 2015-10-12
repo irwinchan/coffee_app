@@ -7,6 +7,12 @@
         Created by <%= link_to @user.name, user_path(@user) %>
         <%= link_to 'edit', edit_recipe_path(@recipe) %>
       </div>
+      <div class="panel panel-info">
+        <div class="panel-heading"><h4>This recipe uses</h4></div>
+        <div class="panel-body">
+          Coffee: <%= link_to @recipe.coffee_bean.name, user_coffee_bean_path(@user, @recipe.coffee_bean)  %>
+        </div>
+      </div>
       <p><%= @recipe.description %></p>
       <ul class="list-group">
         <li class="list-group-item"><strong>Water temperature:</strong> <%= @recipe.water_temp %> &#8451</li>

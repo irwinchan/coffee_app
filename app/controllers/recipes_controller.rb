@@ -50,7 +50,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:user_id, :water_vol, :water_temp, :title, :technique, :description)
+    params.require(:recipe).permit(:user_id, :water_vol, :water_temp, :title, :technique, :description, :coffee_bean_id, :coffee_amount)
   end
 
 end

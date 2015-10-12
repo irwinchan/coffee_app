@@ -5,9 +5,5 @@
     <div class="coffee-roast">Roast: <%= coffee.roast %></div>
     <div class="coffee-origin">Origin: <%= coffee.origin %></div>
     <div class="coffee-origin">Description: <%= coffee.description_short %></div>
-    <div class="edit-controls">
-      <%= link_to "edit", edit_user_coffee_bean_path(current_user, coffee) %>
-      <%= link_to "delete", user_coffee_bean_path(current_user, coffee), method: :delete, data: {confirm: "Delete #{coffee.name}?"} %>
-    </div>
   </div>
 </div>
