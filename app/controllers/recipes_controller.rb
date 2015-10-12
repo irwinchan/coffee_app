@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
 
     if current_user
       @recipe = current_user.recipes.build
+      @coffee = CoffeeBean.where('user_id = ?', current_user)
     end
   end
 

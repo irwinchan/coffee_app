@@ -13,6 +13,12 @@
       </div>
     </div>
 
+     <div class="form-group">
+      <div class="col-sm-6 col-sm-offset-2">
+        <%= f.collection_select(:coffee_bean_id, @coffee, :id, :name, {prompt: "Choose Coffee"}, {class: "form-control"})  %>
+      </div>
+    </div>
+
     <div class="form-group">
       <%= f.label :water_vol, class: "col-sm-2 control-label" %>
       <div class="col-sm-6">

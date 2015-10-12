@@ -4,7 +4,8 @@ class CoffeeBeansController < ApplicationController
   end
 
   def create
-    @coffee = CoffeeBean.new(coffee_params)
+    @user = User.find(params[:user_id])
+    @coffee = @user.coffee_beans.new(coffee_params)
     if @coffee.save
       redirect_to user_path(current_user)
     else
@@ -13,23 +14,27 @@ class CoffeeBeansController < ApplicationController
   end
 
   def edit
-    @coffee = CoffeeBean.find(params[:id])
+    @coffee = current_user.coffee_beans.find(params[:id])
   end
 
   def update
+    @user = params[:user_id]
     @coffee = CoffeeBean.find(params[:id])
-    @coffee.update_attributes(coffee_params)
-    redirect_to coffee_bean_path(@coffee)
+    if @coffee.update_attributes(coffee_params)
+      redirect_to user_coffee_beans_path(@user)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @coffee = CoffeeBean.find(params[:id])
     @coffee.destroy
-    redirect_to user_path(current_user)
+    redirect_to user_coffee_beans_path(current_user)
   end
 
   def index
-    @coffees = CoffeeBean.all
+    @coffees = current_user.coffee_beans.all
   end
 
   def show

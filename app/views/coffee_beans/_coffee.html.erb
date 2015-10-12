@@ -1,8 +1,12 @@
 <div class="coffee-bean">
   <div class="coffee-description">
-    <div class="coffee-name"><h2><%= coffee.name %></h2></div>
+    <div class="coffee-name"><h3><%= coffee.name %></h3></div>
     <div class="coffee-brand">Brand: <%= coffee.brand %></div>
     <div class="coffee-roast">Roast: <%= coffee.roast %></div>
     <div class="coffee-origin">Origin: <%= coffee.origin %></div>
+    <div class="edit-controls">
+      <%= link_to "edit", edit_user_coffee_bean_path(current_user, coffee) %>
+      <%= link_to "delete", user_coffee_bean_path(current_user, coffee), method: :delete, data: {confirm: "Delete #{coffee.name}?"} %>
+    </div>
   </div>
 </div>

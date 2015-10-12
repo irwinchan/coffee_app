@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root 'recipes#index'
-  resources :users
+  resources :users do
+    resources :coffee_beans
+  end
   resources :recipes
   resources :sessions, only: [:new, :create, :destroy]
-  resources :coffee_beans
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
