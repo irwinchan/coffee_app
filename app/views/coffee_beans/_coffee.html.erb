@@ -7,3 +7,6 @@
     <div class="coffee-origin">Description: <%= coffee.description_short %></div>
   </div>
 </div>
+
+<%= link_to "edit", edit_user_coffee_bean_path(current_user, coffee) %>
+<%= link_to 'Destroy', user_coffee_bean_path(current_user, coffee), method: :delete,data: { confirm: 'Are you sure?' } %>

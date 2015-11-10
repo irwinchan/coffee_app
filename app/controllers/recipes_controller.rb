@@ -26,6 +26,8 @@ class RecipesController < ApplicationController
   def create
     user = User.find(current_user.id)
     @recipe = user.recipes.new(recipe_params)
+    @coffee = CoffeeBean.where('user_id = ?', current_user)
+
     if @recipe.save
       redirect_to :recipes
     else
@@ -35,6 +37,7 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = current_user.recipes.find(params[:id])
+    @coffee = CoffeeBean.where('user_id = ?', current_user)
   end
 
   def update
