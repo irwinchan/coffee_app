@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'recipes#index'
   resources :users do
-    resources :coffee_beans
+    resources :coffee_beans, shallow: true
   end
+
   resources :recipes
   resources :sessions, only: [:new, :create, :destroy]
 
