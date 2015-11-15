@@ -2,7 +2,7 @@
 <p>Email: <%= @user.email %><p>
 
 <nav>
-  <%= link_to "coffees", user_coffee_beans_path(current_user) %>
+  <%= link_to "coffees", user_coffee_beans_path(@user) %>
 </nav>
 
 <h3>Recipes</h3>

@@ -1,6 +1,9 @@
 <h1>Coffees</h1>
 
-<%= link_to "Add coffee", new_user_coffee_bean_path(current_user), class: "btn btn-default" %>
+<% if current_user %>
+  <%= link_to "Add coffee", new_user_coffee_bean_path(current_user), class: "btn btn-default" %>
+<% end %>
+
 <% @coffees.each do |coffee| %>
   <%= render partial: 'coffee', locals: {coffee: coffee} %>
 <% end %>

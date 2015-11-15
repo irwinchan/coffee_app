@@ -10,9 +10,18 @@
 50.times do
   User.create!(
     name: Faker::Name.name,
-    email: Faker::Internet.email
+    email: Faker::Internet.email,
+    password_digest: BCrypt::Password.create("password")
   )
 end
+
+CoffeeBean.create!(
+  brand: "Tim Hortons",
+  roast: "medium",
+  name: "Columbian",
+  origin: "Columbia",
+  description_short: "Standard Timmy's"
+)
 
 100.times do
   Recipe.create!(
@@ -22,7 +31,8 @@ end
     water_temp: (70..100).to_a.sample,
     title: Faker::Lorem.sentence.titleize,
     coffee_amount: (5..15).to_a.sample,
-    description: Faker::Lorem.sentence(3,true)
+    description: Faker::Lorem.sentence(3,true),
+    coffee_bean_id: 1
   )
 end
 

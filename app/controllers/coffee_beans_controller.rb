@@ -14,11 +14,11 @@ class CoffeeBeansController < ApplicationController
   end
 
   def edit
-    @coffee = current_user.coffee_beans.find(params[:id])
+    @coffee = CoffeeBean.find(params[:id])
   end
 
   def update
-    @user = params[:user_id]
+    @user = current_user
     @coffee = CoffeeBean.find(params[:id])
     if @coffee.update_attributes(coffee_params)
       redirect_to user_coffee_beans_path(@user)
@@ -34,7 +34,8 @@ class CoffeeBeansController < ApplicationController
   end
 
   def index
-    @coffees = current_user.coffee_beans.all
+    @user = User.find(params[:user_id])
+    @coffees = @user.coffee_beans.all
   end
 
   def show

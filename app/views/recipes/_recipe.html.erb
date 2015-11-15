@@ -10,7 +10,7 @@
       <div class="panel panel-info">
         <div class="panel-heading"><h4>This recipe uses</h4></div>
         <div class="panel-body">
-          Coffee: <%= link_to @recipe.coffee_bean.name, user_coffee_bean_path(@user, @recipe.coffee_bean)  %>
+          Coffee: <%= link_to @recipe.coffee_bean.name, coffee_bean_path(@recipe.coffee_bean)  %>
         </div>
       </div>
       <p><%= @recipe.description %></p>
